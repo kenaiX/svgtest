@@ -1,4 +1,4 @@
-package cc.kenai.svg;
+package cc.kenai.common;
 
 import android.content.Context;
 import android.content.res.TypedArray;

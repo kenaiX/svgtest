@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cc.kenai.svg;
+package cc.kenai.common;
 
 import java.text.ParseException;
 
@@ -34,6 +34,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
+
+import cc.kenai.svg.R;
 
 public class AnimatedSvgView extends View {
 
@@ -138,13 +140,13 @@ public class AnimatedSvgView extends View {
                         210
                 },
                 new int[]{
-                        00
+                        50
                 },
                 new int[]{
                         180
                 },
                 new int[]{
-                        00
+                        230
                 });
         int traceColor = Color.argb(255, 0, 200, 100);
         int[] traceColors = new int[2]; // 4 glyphs

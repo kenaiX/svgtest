@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cc.kenai.svg;
+package cc.kenai.common;
 
 import java.text.ParseException;
 

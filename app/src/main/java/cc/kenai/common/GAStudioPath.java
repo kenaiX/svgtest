@@ -1,5 +1,5 @@
 
-package cc.kenai.svg;
+package cc.kenai.common;
 
 public class GAStudioPath {
     public static final String[] STUDIO_PATH = new String[]{
