@@ -46,9 +46,7 @@ public class AnimatedSvgView extends View {
     private int mFillStart = 1200;
     private int mFillTime = 1000;
     private static final int MARKER_LENGTH_DIP = 16;
-    // ��Ե�ߵ���ɫ
     private int[] mTraceResidueColors;
-    // �����ߵ���ɫ
     private int[] mTraceColors;
     private RatioSizingUtils.RatioSizingInfo mRatioSizingInfo = new RatioSizingUtils.RatioSizingInfo();
     private int mViewportWidth;
@@ -58,16 +56,13 @@ public class AnimatedSvgView extends View {
     private static final Interpolator INTERPOLATOR = new DecelerateInterpolator();
 
     private Paint mFillPaint;
-    // ����Ӧpath����ɫ�������Ӧpath��
     private int[] mFillAlphas;
     private int[] mFillReds;
     private int[] mFillGreens;
     private int[] mFillBlues;
     private GlyphData[] mGlyphData;
-    // Ҫ���Ƶ�·������
     private String[] mGlyphStrings;
     private float mMarkerLength;
-    // �����ļ������õĿ��
     private int mWidth;
     private int mHeight;
     private long mStartTime;
@@ -133,24 +128,24 @@ public class AnimatedSvgView extends View {
     }
 
     private void loadConfig(){
-        setGlyphStrings(GAStudioPath.STUDIO_PATH);
+        setGlyphStrings(LoadingPath.STUDIO_PATH);
         // ARGB values for each glyph
         setFillPaints(
                 new int[]{
-                        210
+                        210,210
                 },
                 new int[]{
-                        50
+                        50,50
                 },
                 new int[]{
-                        180
+                        180,180
                 },
                 new int[]{
-                        230
+                        230,230
                 });
-        int traceColor = Color.argb(255, 0, 200, 100);
+        int traceColor = Color.argb(255, 50, 180, 230);
         int[] traceColors = new int[2]; // 4 glyphs
-        int residueColor = Color.argb(80, 175, 190, 6);
+        int residueColor = Color.argb(80, 50, 180, 230);
         int[] residueColors = new int[2]; // 4 glyphs
 
         // Every glyph will have the same trace/residue

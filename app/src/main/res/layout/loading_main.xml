@@ -6,11 +6,9 @@
     android:background="@android:color/white"
     android:padding="20dp">
 
-
-
-
         <cc.kenai.common.AnimatedSvgView
-            android:id="@+id/animated_svg_view"
+            tools:background="#50ffff"
+            android:id="@+id/loading_svg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

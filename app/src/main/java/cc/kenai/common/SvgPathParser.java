@@ -25,8 +25,6 @@ public class SvgPathParser {
 
     private static final int TOKEN_ABSOLUTE_COMMAND = 1;
     private static final int TOKEN_RELATIVE_COMMAND = 2;
-    //
-    // �������ֵ��".""-"
     private static final int TOKEN_VALUE = 3;
     private static final int TOKEN_EOF = 4;
 
@@ -34,7 +32,6 @@ public class SvgPathParser {
     private PointF mCurrentPoint = new PointF();
     private int mLength;
     private int mIndex;
-    // Ҫ������path �ַ�
     private String mPathString;
 
     protected float transformX(float x) {
@@ -65,7 +62,6 @@ public class SvgPathParser {
             switch (command) {
                 case 'M':
                 case 'm': {
-                    // mָ��൱��android ��� moveTo()
                     boolean firstPoint = true;
                     while (advanceToNextToken() == TOKEN_VALUE) {
                         consumeAndTransformPoint(tempPoint1,
@@ -87,7 +83,6 @@ public class SvgPathParser {
 
                 case 'C':
                 case 'c': {
-                    // cָ��൱��android ��� cubicTo()
                     if (mCurrentPoint.x == Float.NaN) {
                         throw new ParseException("Relative commands require current point", mIndex);
                     }
@@ -105,7 +100,6 @@ public class SvgPathParser {
 
                 case 'L':
                 case 'l': {
-                    // �൱��lineTo()���л�ֱ��
                     if (mCurrentPoint.x == Float.NaN) {
                         throw new ParseException("Relative commands require current point", mIndex);
                     }
@@ -120,7 +114,6 @@ public class SvgPathParser {
 
                 case 'H':
                 case 'h': {
-                    // ��ˮƽֱ��
                     if (mCurrentPoint.x == Float.NaN) {
                         throw new ParseException("Relative commands require current point", mIndex);
                     }
@@ -138,7 +131,6 @@ public class SvgPathParser {
 
                 case 'V':
                 case 'v': {
-                    // ����ֱֱ��
                     if (mCurrentPoint.x == Float.NaN) {
                         throw new ParseException("Relative commands require current point", mIndex);
                     }
@@ -156,7 +148,6 @@ public class SvgPathParser {
 
                 case 'Z':
                 case 'z': {
-                    // ���path
                     p.close();
                     break;
                 }
